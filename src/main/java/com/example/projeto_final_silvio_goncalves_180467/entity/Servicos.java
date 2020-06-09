@@ -27,12 +27,12 @@ public class Servicos implements Serializable{
 
     @ManyToMany
     @JoinTable(
-        name = "PROFISSIONALSERVICO",
-        uniqueConstraints = @UniqueConstraint(columnNames = {"ID_PROFISSIONAL", "ID_SERVICO"}),
+        name = "CABELEREIROSERVICO",
+        uniqueConstraints = @UniqueConstraint(columnNames = {"ID_CABELEREIRO", "ID_SERVICO"}),
         joinColumns = @JoinColumn(name = "ID_SERVICO"),
-        inverseJoinColumns = @JoinColumn(name = "ID_PROFISSIONAL")
+        inverseJoinColumns = @JoinColumn(name = "ID_CABELEREIRO")
     )
-    private List<Profissional> profissionals;
+    private List<Cabelereiro> cabelereiros;
 
     @ManyToMany
     @JoinTable(
@@ -59,12 +59,12 @@ public class Servicos implements Serializable{
         this.tipo = tipo;
     }
 
-    public List<Profissional> getProfissionals() {
-        return profissionals;
+    public List<Cabelereiro> getCabelereiros() {
+        return cabelereiros;
     }
 
-    public void setProfissionals(List<Profissional> profissionals) {
-        this.profissionals = profissionals;
+    public void setCabelereiros(List<Cabelereiro> cabelereiros) {
+        this.cabelereiros = cabelereiros;
     }
 
     public List<Agendamento> getAgendamentos() {
@@ -77,7 +77,7 @@ public class Servicos implements Serializable{
 
     @Override
     public String toString() {
-        return "Servicos [agendamentos=" + agendamentos + ", id=" + id + ", profissionals=" + profissionals + ", tipo="
+        return "Servicos [agendamentos=" + agendamentos + ", id=" + id + ", cabelereiros=" + cabelereiros + ", tipo="
                 + tipo + "]";
     }
 

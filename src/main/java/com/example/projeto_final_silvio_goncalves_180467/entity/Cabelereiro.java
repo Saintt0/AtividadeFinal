@@ -14,7 +14,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.UniqueConstraint;
 
 @Entity
-public class Profissional implements Serializable{
+public class Cabelereiro implements Serializable{
 
     /**
      *
@@ -32,9 +32,9 @@ public class Profissional implements Serializable{
 
     @ManyToMany
     @JoinTable(
-        name = "PROFISSIONALSERVICO",
-        uniqueConstraints = @UniqueConstraint(columnNames = {"ID_PROFISSIONAL", "ID_SERVICO"}),
-        joinColumns = @JoinColumn(name = "ID_PROFISSIONAL"),
+        name = "CABELEREIROSERVICO",
+        uniqueConstraints = @UniqueConstraint(columnNames = {"ID_CABELEREIRO", "ID_SERVICO"}),
+        joinColumns = @JoinColumn(name = "ID_CABELEREIRO"),
         inverseJoinColumns = @JoinColumn(name = "ID_SERVICO")
     )
     private List<Servicos> servicos;
@@ -73,7 +73,7 @@ public class Profissional implements Serializable{
 
     @Override
     public String toString() {
-        return "Profissional [agendamentos=" + agendamentos + ", id=" + id + ", nome=" + nome + ", servicos=" + servicos
+        return "Cabelereiro [agendamentos=" + agendamentos + ", id=" + id + ", nome=" + nome + ", servicos=" + servicos
                 + "]";
     }
 

@@ -44,4 +44,15 @@ public class ClienteController {
 
         return "redirect:/cliente";
     }
+
+    @GetMapping("atualizarcliente/{id}")
+    public ModelAndView atualizarCliente(@PathVariable (name = "id") Integer id)
+    {
+        ModelAndView mv = new ModelAndView("AtualizarCliente");
+        Cliente c = cs.getClienteById(id);
+
+        mv.addObject("cliente", c);
+        
+        return mv;
+    }
 }

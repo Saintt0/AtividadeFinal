@@ -34,7 +34,7 @@ public class Agendamento implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "ID_MARCADO")
-    private Profissional profissional;
+    private Cabelereiro cabelereiro;
 
     @ManyToMany
     @JoinTable(
@@ -77,12 +77,12 @@ public class Agendamento implements Serializable {
         this.cliente = cliente;
     }
 
-    public Profissional getProfissional() {
-        return profissional;
+    public Cabelereiro getCabelereiro() {
+        return cabelereiro;
     }
 
-    public void setProfissional(Profissional profissional) {
-        this.profissional = profissional;
+    public void setCabelereiro(Cabelereiro cabelereiro) {
+        this.cabelereiro = cabelereiro;
     }
 
     public List<Servicos> getServicos() {
@@ -96,7 +96,7 @@ public class Agendamento implements Serializable {
     @Override
     public String toString() {
         return "Agendamento [cliente=" + cliente + ", data=" + data + ", horario=" + horario + ", id=" + id
-                + ", profissional=" + profissional + ", servicos=" + servicos + "]";
+                + ", cabelereiro=" + cabelereiro + ", servicos=" + servicos + "]";
     }
 
     
