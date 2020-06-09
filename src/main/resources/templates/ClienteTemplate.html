@@ -29,12 +29,14 @@
             <th>ID</th>
             <th>Nome</th>
             <th>Telefone</th>
+            <th>Remover</th>
         </tr>
 
         <tr th:each = "cliente : ${clientes}">
             <td th:text ="${cliente.id}"></td>
             <td th:text ="${cliente.nome}"></td>
             <td th:text ="${cliente.telefone}"></td>
+            <td> <a th:href="@{'/removercliente/' + ${cliente.id}}">Remover</a></td>
         </tr>
         
     </table>
