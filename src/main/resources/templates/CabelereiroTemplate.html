@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabelereiro Template</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cabelereiro</h1>
+    <a href="/">Menu</a>
+    <br>
+    <br>
+    <form th:action="@{/cadastrarcabelereiro}" method="POST">
+        <label>Nome:</label><input type="text" name="nome" required/>
+        <input type="submit" value="Cadastrar" />
+    </form>
+
+    <br>
+    <br>
+    
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Atualizar</th>
+            <th>Remover</th>
+        </tr>
+
+        <tr th:each="cabelereiro : ${cabelereiros}">
+            <td th:text="${cabelereiro.id}"></td>
+            <td th:text="${cabelereiro.nome}"></td>
+            <td> <a th:href="@{'/atualizarcabelereiro/' + ${cabelereiro.id}}">Detalhes</a></td>
+            <td> <a th:href="@{'/removercabelereiro/' + ${cabelereiro.id}}">Remover</a></td>
+        </tr>
+    </table>
+</body>
+</html>
