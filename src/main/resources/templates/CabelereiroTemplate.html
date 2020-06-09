@@ -34,7 +34,7 @@
         <tr th:each="cabelereiro : ${cabelereiros}">
             <td th:text="${cabelereiro.id}"></td>
             <td th:text="${cabelereiro.nome}"></td>
-            <td> <a th:href="@{'/atualizarcabelereiro/' + ${cabelereiro.id}}">Detalhes</a></td>
+            <td> <a th:href="@{'/atualizarcabelereiro/' + ${cabelereiro.id}}">Atualizar</a></td>
             <td> <a th:href="@{'/removercabelereiro/' + ${cabelereiro.id}}">Remover</a></td>
         </tr>
     </table>
