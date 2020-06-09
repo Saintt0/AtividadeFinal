@@ -15,7 +15,7 @@
     <a href="/">Menu</a>
     <br>
     <br>
-    <form th:action="@{/cadastraragendamento}" method="POST">
+    <form th:action="@{/cadastraagendamento}" method="POST">
         <label>Data</label><input type="text"  name="data" required/>
         <label>Hora</label><input type="text"  name="horario" required/>
         <label>Cabelereiro:</label>
@@ -54,7 +54,7 @@
         <tr th:each="agendamento : ${agendamentos}">
             <td th:text="${agendamento.id}"></td>
             <td th:text="${agendamento.data}"></td>
-            <td th:text="${agendamento.hora}"></td>
+            <td th:text="${agendamento.horario}"></td>
             <td th:text="${agendamento.cliente?.nome}"></td>
             <td th:text="${agendamento.cabelereiro?.nome}"></td>
             <td> <a th:href="@{'/escolherservicos/' + ${agendamento.id}}">Escolher</a></td>

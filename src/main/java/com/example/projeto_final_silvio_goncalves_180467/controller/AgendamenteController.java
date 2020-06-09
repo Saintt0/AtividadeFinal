@@ -50,7 +50,7 @@ public class AgendamenteController {
     {
         as.cadastrarAgendamento(a);
 
-        return "redirec:/agendamento";
+        return "redirect:/agendamento";
     }
 
 
