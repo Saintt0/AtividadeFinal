@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento Servicos</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Serviço</h1>
+    <a href="/">Menu</a>
+    <a href="/agendamento">voltar</a>
+    <br>
+    <br>
+    <b>Id: </b> <span th:text="${agendamento.id}"></span>
+    <b>Data: </b> <span th:text="${agendamento.data}"></span>
+    <b>Horario: </b> <span th:text="${agendamento.horario}"></span>
+    <b>Cliente: </b> <span th:text="${agendamento.cliente?.nome}"></span>
+    <b>Profissional: </b> <span th:text="${agendamento.cabelereiro.nome}"></span>
+
+    <br>
+    <br>
+
+    <h1>Serviços adicionados</h1>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Serviço</th>
+        </tr>
+       
+        <tr th:each="servico : ${agendamento.servicos}">
+            <td th:text="${servico?.id}"></td>
+            <td th:text="${servico?.nome}"></td>
+        </tr>
+    </table>
+    <br>
+    <br>
+
+    <form th:action="@{/ligarservico(id=${agendamento.id})}" method="POST">
+        <label><b>Serviços:</b></label>
+        <select name="id" required>
+            <option value="">Escolha os Serviços</option>
+            <option th:each="servico : ${servicos}"
+                        th:value="${servico.id}"
+                        th:text="${servico.nome}">
+            </option>
+        </select>
+        <input type="submit" value="Ligar" />
+    </form>
+</body>
+</html>

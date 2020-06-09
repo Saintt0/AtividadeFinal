@@ -89,7 +89,7 @@ public class AgendamenteController {
     }
 
     @PostMapping("/ligarservico")
-    public String ligarServicos(HttpServletRequest req, @RequestParam Integet id)
+    public String ligarServicos(HttpServletRequest req, @RequestParam Integer id)
     {
         Agendamento a = as.getAgendamentoById(id);
         Servicos s = ss.getServicoById(Integer.parseInt(req.getParameter("id")));
