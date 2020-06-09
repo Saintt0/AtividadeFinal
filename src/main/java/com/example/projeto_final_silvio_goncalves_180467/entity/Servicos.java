@@ -23,7 +23,7 @@ public class Servicos implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private int tipo;
+    private String tipo;
 
     @ManyToMany
     @JoinTable(
@@ -51,11 +51,11 @@ public class Servicos implements Serializable{
         this.id = id;
     }
 
-    public int getTipo() {
+    public String getTipo() {
         return tipo;
     }
 
-    public void setTipo(int tipo) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 
