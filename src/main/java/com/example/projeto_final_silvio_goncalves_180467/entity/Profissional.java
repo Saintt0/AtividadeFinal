@@ -27,7 +27,7 @@ public class Profissional implements Serializable{
     private String nome;
     
     @OneToMany
-    @JoinColumn(name = "ID_AGENDADO")
+    @JoinColumn(name = "ID_MARCADO")
     private List<Agendamento> agendamentos;
 
     @ManyToMany

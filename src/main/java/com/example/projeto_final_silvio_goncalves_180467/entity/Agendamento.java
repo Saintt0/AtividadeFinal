@@ -33,7 +33,7 @@ public class Agendamento implements Serializable {
     private Cliente cliente;
 
     @ManyToOne
-    @JoinColumn(name = "ID_AGENDADO")
+    @JoinColumn(name = "ID_MARCADO")
     private Profissional profissional;
 
     @ManyToMany
