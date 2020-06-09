@@ -5,11 +5,13 @@ import java.util.List;
 import com.example.projeto_final_silvio_goncalves_180467.entity.Agendamento;
 import com.example.projeto_final_silvio_goncalves_180467.repository.AgendamentoRepository;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class AgendamenteService {
 
+    @Autowired
     private AgendamentoRepository ar;
 
     public List<Agendamento> getTodosAgendamentos(){

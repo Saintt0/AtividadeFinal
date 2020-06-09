@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento Template</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Agendamento</h1>
+    <a href="/">Menu</a>
+    <br>
+    <br>
+    <form th:action="@{/cadastraragendamento}" method="POST">
+        <label>Data</label><input type="text"  name="data" required/>
+        <label>Hora</label><input type="text"  name="horario" required/>
+        </select>
+        <label>Cabelereiro:</label>
+        <select th:field="${agendamento.cabelereiro}" required>
+            <option value="">Qual Cabelereiro?</option>
+            <option th:each="cabelereiro : ${cabelereiros}"
+                        th:value="${cabelereiro.id}"
+                        th:text="${cabelereiro.nome}">
+            </option>
+        </select>
+        <label>Cliente:</label>
+        <select th:field="${agendamento.cliente}" required>
+            <option value="">Qual Cliente?</option>
+            <option th:each="cliente : ${clientes}"
+                        th:value="${cliente.id}"
+                        th:text="${cliente.nome}">
+            </option>
+        </select>
+        <input type="submit" value="Salvar" />
+
+    </form>
+    <br>
+    <br>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Data</th>
+            <th>Hora</th>
+            <th>Cliente</th>
+            <th>Cabelereiro</th>
+            <th>Servico</th>
+            <th>Atualizar</th>
+            <th>Remover</th>
+        </tr>
+       
+        <tr th:each="agendamento : ${agendamentos}">
+            <td th:text="${agendamento.id}"></td>
+            <td th:text="${agendamento.data}"></td>
+            <td th:text="${agendamento.hora}"></td>
+            <td th:text="${agendamento.cliente?.nome}"></td>
+            <td th:text="${agendamento.cabelereiro?.nome}"></td>
+            <td> <a th:href="@{'/escolherservicos/' + ${agendamento.id}}">Escolher</a></td>
+            <td> <a th:href="@{'/atualizaragendamento/' + ${agendamento.id}}">Atualizar</a></td>
+            <td> <a th:href="@{'/removeragendamento/' + ${agendamento.id}}">Remover</a></td>
+        </tr>
+    </table>
+    
+</body>
+</html>
