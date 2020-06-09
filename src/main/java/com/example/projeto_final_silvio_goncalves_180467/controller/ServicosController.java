@@ -22,8 +22,8 @@ public class ServicosController {
     {
         ModelAndView mv = new ModelAndView("ServicosTemplate");
 
-        mv.addObject("Servicos", new Servicos());
-        mv.addObject("Servicoss", ss.getTodosServicos());
+        mv.addObject("Servico", new Servicos());
+        mv.addObject("Servicos", ss.getTodosServicos());
 
         return mv;
     }
