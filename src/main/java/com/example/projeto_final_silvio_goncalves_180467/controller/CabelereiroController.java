@@ -95,7 +95,7 @@ public class CabelereiroController {
         c.getServicos().add(s);
         cs.cadastrar(c);
 
-        return "redirect:/addservicos" + id;
+        return "redirect:/addservicos/" + id;
     }
 
     @GetMapping("/mostraragendamentos/{id}")

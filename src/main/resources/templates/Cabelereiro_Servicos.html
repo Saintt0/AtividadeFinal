@@ -29,9 +29,9 @@
             <th>Serviço</th>
         </tr>
 
-        <tr th:each="servico : ${cabelereiro.servico">
-            <td th:text="${servico?.id"></td>
-            <td th:text="${servico?.tipo"></td>
+        <tr th:each="servico : ${cabelereiro.servicos}">
+            <td th:text="${servico?.id}"></td>
+            <td th:text="${servico?.tipo}"></td>
         </tr>
     </table>
 
@@ -44,7 +44,7 @@
             <option value="">Escolha os Serviços</option>
             <option th:each="servico : ${servicos}"
                     th:value="${servico.id}"
-                    th:text="${servico.tipo">
+                    th:text="${servico.tipo}">
             </option>
         </select>
         <input type="submit" value="Adicionar" />

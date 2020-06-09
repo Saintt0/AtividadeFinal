@@ -18,7 +18,6 @@
     <form th:action="@{/cadastraragendamento}" method="POST">
         <label>Data</label><input type="text"  name="data" required/>
         <label>Hora</label><input type="text"  name="horario" required/>
-        </select>
         <label>Cabelereiro:</label>
         <select th:field="${agendamento.cabelereiro}" required>
             <option value="">Qual Cabelereiro?</option>

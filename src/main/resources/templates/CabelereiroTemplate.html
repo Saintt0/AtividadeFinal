@@ -36,7 +36,7 @@
         <tr th:each="cabelereiro : ${cabelereiros}">
             <td th:text="${cabelereiro.id}"></td>
             <td th:text="${cabelereiro.nome}"></td>
-            <td> <a th:href="@{'/adicionarservicos/' + ${cabelereiro.id}}">Serviços</a></td>
+            <td> <a th:href="@{'/addservicos/' + ${cabelereiro.id}}">Serviços</a></td>
             <td> <a th:href="@{'/mostraragendamentos/' + ${cabelereiro.id}}">Agendamentos</a></td>
             <td> <a th:href="@{'/atualizarcabelereiro/' + ${cabelereiro.id}}">Atualizar</a></td>
             <td> <a th:href="@{'/removercabelereiro/' + ${cabelereiro.id}}">Remover</a></td>
