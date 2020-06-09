@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualizar Agendamento</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Atualizar </h1>    
+    <a href="/">Menu</a>
+    <a href="/agendamento">Voltar</a>
+    <br>
+    <br>
+    <form th:action="@{/cadastraagendamento}" th:object="${agendamento}" method="POST" id="formHorario">
+      
+        <label>Id: </label> <span th:text="${agendamento.id}"></span>
+        <input type="hidden" th:value="${agendamento.id}" th:field="${agendamento.id}" name="id" />   
+        <label>Data: </label>
+        <input type="text" placeholder="Digite a data" th:value="${agendamento.data}" name="data" required/>  
+        <label>Horario: </label>
+        <input type="text" placeholder="Digite a hora" th:value="${agendamento.horario}" name="horario" required/>
+        
+        <label>Cliente: </label>
+        <select th:field="${agendamento.cliente}" required>
+            <option value="">Cliente</option>
+            <option th:each="cliente : ${clientes}"
+                        th:value="${cliente.id}"
+                        th:text="${cliente.nome}">
+            </option>
+        </select>
+
+        <label>Cabelereiro: </label>
+        <select th:field="${agendamento.cabelereiro}" required>
+            <option value="">Cabelereiro</option>
+            <option th:each="cabelereiro : ${cabelereiros}"
+                        th:value="${cabelereiro.id}"
+                        th:text="${cabelereiro.nome}">
+            </option>
+        </select>
+
+        <input type="submit" value="Salvar" />
+    </form>
+</body>
+</html>
