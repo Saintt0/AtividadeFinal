@@ -30,7 +30,7 @@
             <th>Atualizar</th>
             <th>Remover</th>
         </tr>
-        <tr th:each="servico : ${servicos}">
+        <tr th:each = "servico : ${servicos}">
             <td th:text="${servico.id}"></td>
             <td th:text="${servico.tipo}"></td>
             <td><a th:href="@{'/atualizarservicos/' + ${servico.id}}">Atualizar</a></td>

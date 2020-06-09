@@ -33,7 +33,7 @@
             <th>Cliente</th>
         </tr>
 
-        <tr th:each="agendamento : ${cabelereiro.agendamento}">
+        <tr th:each="agendamento : ${cabelereiro.agendamentos}">
             <td th:text="${agendamento?.id"></td>
             <td th:text="${agendamento?.data"></td>
             <td th:text="${agendamento?.horario"></td>
