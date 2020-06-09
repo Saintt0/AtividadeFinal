@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabelereiro Servicos</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Serviço</h1>
+    <a href="/">Menu</a>
+    <a href="/cabelereiro">Voltar</a>
+    <br>
+    <br>
+    <b>Id: </b><span th:text="${cabelereiro.id}"></span>
+    <b>Cabelereiro: </b><span th:text="${cabelereiro.nome}"></span>
+
+    <br>
+    <br>
+
+    <h1>Serviços</h1>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Serviço</th>
+        </tr>
+
+        <tr th:each="servico : ${cabelereiro.servico">
+            <td th:text="${servico?.id"></td>
+            <td th:text="${servico?.tipo"></td>
+        </tr>
+    </table>
+
+    <br>
+    <br>
+
+    <form th:action="@{/addserv(id=${cabelereiro.id})}" method="POST">
+        <label>Serviços: </label>
+        <select name="ids"required>
+            <option value="">Escolha os Serviços</option>
+            <option th:each="servico : ${servicos}"
+                    th:value="${servico.id}"
+                    th:text="${servico.tipo">
+            </option>
+        </select>
+        <input type="submit" value="Adicionar" />
+    </form>
+
+</body>
+</html>
