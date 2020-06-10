@@ -41,7 +41,7 @@
     <br>
 
     <form th:action="@{/ligarservico(id=${agendamento.id})}" method="POST">
-        <label><b>Serviços:</b></label>
+        <label><b>Serviços: </b></label>
         <select name="id" required>
             <option value="">Escolha os Serviços</option>
             <option th:each="servico : ${servicos}"
